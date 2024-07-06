@@ -3,10 +3,12 @@
 body {
     background-image: url(/imgs/bg.png);
     font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 nav {
-    height: 100px;
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -14,8 +16,8 @@ nav {
     margin: 1rem 1rem 0 1rem;
     border-radius: 30px;
     background: #fcfcfc;
-    box-shadow: 20px 20px 60px #d6d6d6,
-        -20px -20px 60px #ffffff;
+    box-shadow: 20px 20px 60px #d6d6d6, -20px -20px 60px #ffffff;
+    flex-wrap: wrap;
 }
 
 nav a {
@@ -24,9 +26,14 @@ nav a {
     font-size: 80px;
     font-weight: medium;
     -webkit-text-stroke: 3px black;
-
+    white-space: nowrap;
 }
 
+.links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
 
 .links li {
     display: inline-block;
@@ -56,19 +63,22 @@ nav a {
 /* SECTION */
 section {
     display: flex;
-    margin: 50px 4rem 0 4rem;
+    flex-direction: row;
+    margin: 50px 4rem 100px 4rem;
     justify-content: space-between;
-
+    align-items: center;
+    text-align: center;
 }
 
 section .content {
-    /* background-color: red; */
-    max-width: 60%;
+    max-width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding-right: 2rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 section .content p {
@@ -94,9 +104,16 @@ section .content a:hover {
     text-decoration: underline;
 }
 
+section .bumpy {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
 
 section .bumpy img {
     max-width: 500px;
+    /* Adjust size here */
     border-radius: 50%;
     padding: 10px;
     background-color: rgb(63, 63, 63);
@@ -120,11 +137,11 @@ section .bumpy img {
 /* FOOTER */
 footer {
     font-weight: 600;
-    margin-top: 40px;
+    position: fixed;
+    bottom: 0;
     border-radius: 10px;
     background: #fcfcfc;
-    box-shadow: 20px 20px 60px #d6d6d6,
-        -20px -20px 60px #ffffff;
+    box-shadow: 20px 20px 60px #d6d6d6, -20px -20px 60px #ffffff;
     height: 50px;
     width: 100%;
     display: flex;
@@ -133,7 +150,6 @@ footer {
 }
 
 /* ANIMATION */
-
 @keyframes upDown {
     0% {
         transform: translateY(-10);
@@ -145,5 +161,163 @@ footer {
 
     100% {
         transform: translateY(-10);
+    }
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 1200px) {
+    nav {
+        padding: 10px 30px;
+    }
+
+    nav a {
+        font-size: 70px;
+        -webkit-text-stroke: 2.5px black;
+    }
+
+    section {
+        margin: 40px 3rem 0 3rem;
+    }
+
+    section .content p {
+        font-size: 30px;
+    }
+
+    section .content p span {
+        font-size: 18px;
+    }
+
+    section .content a {
+        max-width: 140px;
+    }
+
+    section .bumpy img {
+        max-width: 250px;
+    }
+
+    footer {
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 800px) {
+    nav {
+        padding: 10px 20px;
+    }
+
+    nav a {
+        font-size: 60px;
+        -webkit-text-stroke: 2px black;
+    }
+
+    section {
+        margin: 30px 2rem 0 2rem;
+    }
+
+    section .content p {
+        font-size: 28px;
+    }
+
+    section .content p span {
+        font-size: 16px;
+    }
+
+    section .content a {
+        max-width: 130px;
+    }
+
+    section .bumpy img {
+        max-width: 220px;
+    }
+
+    footer {
+        margin-top: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        height: auto;
+        padding: 10px 20px;
+    }
+
+    nav a {
+        font-size: 40px;
+        -webkit-text-stroke: 1.5px black;
+    }
+
+    .links li {
+        padding: 5px;
+        margin: 5px;
+        max-height: none;
+    }
+
+    section {
+        margin: 20px 2rem;
+        flex-direction: column;
+    }
+
+    section .content {
+        max-width: 100%;
+        padding-right: 0;
+    }
+
+    section .content p {
+        font-size: 25px;
+    }
+
+    section .content p span {
+        font-size: 15px;
+    }
+
+    section .content a {
+        max-width: 120px;
+        padding: 10px;
+    }
+
+    section .bumpy img {
+        max-width: 200px;
+    }
+
+    footer {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    nav {
+        padding: 10px;
+    }
+
+    nav a {
+        font-size: 30px;
+        -webkit-text-stroke: 1px black;
+    }
+
+    .links li {
+        padding: 5px;
+        margin: 5px;
+    }
+
+    section {
+        margin: 10px 1rem;
+    }
+
+    section .content p {
+        font-size: 20px;
+    }
+
+    section .content p span {
+        font-size: 12px;
+    }
+
+    section .content a {
+        max-width: 100px;
+        padding: 8px;
+    }
+
+    section .bumpy img {
+        max-width: 150px;
     }
 }
