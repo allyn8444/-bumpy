@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$BUMPY</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header>
+        <nav>
+            <a href="">$BUMPY</a>
+            <ul class="links">
+                <li><a href="https://dexscreener.com/solana/5k3qtzuuvdazq7tddpsdqqe5qwo52exsz5zjdwuzuoma"
+                        target="_blank"><img src="/imgs/dexscreener.png" alt=""></a></li>
+                <li><a href="https://twitter.com/bumpy_sol" target="_blank"><img src="/imgs/twitter.png" alt=""></a>
+                </li>
+                <li><a href="https://t.me/BUMPYCTO2" target="_blank"><img src="/imgs/telegram.png" alt=""></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- CONTENT -->
+    <section>
+        <div class="content">
+            <p>Meet BUMPY, the cutest cryptocurrency on the block! 🐶💰 Invest in smiles and wagging tails with
+                every transaction.
+                <br> <br>
+                <b>#$BUMPY #DogMemecoin #CryptoCuteness</b>
+                <br>
+                <span>CA: <b id="ca" onclick="copy()">45PfAFkRYNAE8fHDrjPZAFJBNQXB9HZjQiiKzVZbpump</b></span>
+                <span id="copy-ca">(click CA to copy)</span>
+            </p>
+
+
+            <a href="https://raydium.io/swap?outputMint=45PfAFkRYNAE8fHDrjPZAFJBNQXB9HZjQiiKzVZbpump"
+                target="_blank">Trade on
+                Raydium</a>
+        </div>
+
+        <div class="bumpy"><img src="/imgs/BUMPY.jpg" alt=""></div>
+    </section>
+    <!-- FOOTER -->
+    <footer>$BUMPY CTO</footer>
+
+    <!-- SCRIPT -->
+    <script>
+        function copy() {
+            // Get the text field
+            var copyText = document.getElementById("ca");
+            console.log(copyText.innerText);
+
+            // Copy the text inside the text field
+            navigator.clipboard.writeText(copyText.innerText);
+
+            // Alert the copied text
+            alert("CA Copied: " + copyText.innerText);
+        }
+    </script>
+</body>
+
+
+</script>
+
+</html>
